@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') or exit('No direct script access allowed');
+<?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /**
  * Captcha library for CodeIgniter
@@ -15,7 +17,6 @@
  * @license null
  * @link https://github.com/adhocore/ci-captcha The main repo of this lib
  */
-
 class Captchademo extends CI_Controller {
 
     public function __construct() {
@@ -35,17 +36,16 @@ class Captchademo extends CI_Controller {
             }
         }
         $this->load->view('captchademo', $viewdata);
-
     }
 
     // move this method to base controller so it is always available for $this scope 
     public function _checkCaptcha($input) {
         $code = $this->session->userdata('captcha_code');
         if (strcasecmp($code, $input) == 0) {
-			return true;
-		}
-		$this->form_validation->set_message(__FUNCTION__, 'Captcha incorrect.');
-		return false;
+            return true;
+        }
+        $this->form_validation->set_message(__FUNCTION__, 'Captcha incorrect.');
+        return false;
     }
 
 }
