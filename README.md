@@ -1,4 +1,4 @@
-## Easy and hassle free plug and play CI captcha library
+## Easy, hassle free, plug-n-play CI captcha library
 
 - It is tested successfully with CI 2.1 stable. 
 - (should run well with immediate predecessor / successor)
